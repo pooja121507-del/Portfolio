@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        .icon {
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        background-color: white;
+    }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #EFFFFA, #EFF8FF, #FFF0F6);
+            color: #34495E;
+            line-height: 1.7;
+        }
+        header {
+            background-color: #B8F2E6;
+            text-align: center;
+            padding: 30px 15px;
+            border-bottom: 4px solid #87CEEB;
+            animation: slideDown 1s ease;
+        }
+
+        header h1 {
+            color: #2584B9;
+            font-size: 36px;
+            animation: glow 2s infinite alternate;
+        }
+
+        header p {
+            margin-top: 8px;
+        }
+        
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    margin: 0;
+}
+header {
+    padding-left: 15px;
+    padding-right: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin-left: 0;
+}
+
+header nav a {
+    margin: 0;
+    white-space: nowrap;
+}
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            background-color: white;
+            color: #34495E;
+            text-decoration: none;
+            padding: 9px 17px;
+            margin: 5px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.4s;
+        }
+
+        nav a:hover {
+            background-color: #FFD6E7;
+            color: #C23B70;
+            transform: translateY(-5px);
+        }
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+        section {
+            background-color: white;
+            margin: 35px 0;
+            padding: 40px 25px;
+            border-radius: 25px;
+            text-align: center;
+            border: 2px solid #D8F5EC;
+            box-shadow: 0 6px 20px #87CEEB35;
+            animation: fadeIn 1.2s ease;
+        }
+
+        section h2 {
+            color: #D94F85;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        section h3 {
+            color: #2584B9;
+            margin-bottom: 12px;
+        }
+        #home {
+            background: linear-gradient(135deg, #B8F2E6, #E5F3FF, #FFD6E7);
+            padding: 60px 25px;
+        }
+
+        #home h2 {
+            font-size: 35px;
+        }
+
+        #home h3 {
+            font-size: 23px;
+        }
+
+        #home p {
+            margin: 15px auto;
+            max-width: 650px;
+        }
+
+        .home-button {
+            display: inline-block;
+            background-color: white;
+            color: #2584B9;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.4s;
+        }
+
+        .home-button:hover {
+            background-color: #FFD6E7;
+            transform: scale(1.08);
+        }
+        #about {
+            background: linear-gradient(135deg, white, #E1FFF4);
+        }
+        #skills article {
+            display: inline-block;
+            vertical-align: top;
+            width: 200px;
+            min-height: 145px;
+            background-color: #B8F2E6;
+            padding: 25px 15px;
+            margin: 12px;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            box-shadow: 0 5px 15px #00000010;
+            transition: 0.4s;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        #skills article:nth-of-type(2) {
+            background-color: #FFD6E7;
+            animation-delay: 0.3s;
+        }
+
+        #skills article:nth-of-type(3) {
+            background-color: #DCEEFF;
+            animation-delay: 0.6s;
+        }
+
+        #skills article:nth-of-type(4) {
+            background-color: #E8DFFF;
+            animation-delay: 0.9s;
+        }
+
+        #skills article:nth-of-type(5) {
+            background-color: #D7F5FF;
+            animation-delay: 1.2s;
+        }
+
+        #skills article:hover {
+            background-color: #87CEEB;
+            border-color: #B8F2E6;
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 10px 25px #87CEEB70;
+            animation-play-state: paused;
+        }
+
+        #skills article h3 {
+            color: #267DA6;
+            font-size: 21px;
+        }
+
+        #skills article p {
+            font-size: 14px;
+        }
+        .project-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .flip-card {
+            width: 250px;
+            height: 230px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease;
+        }
+        .flip-card:hover .flip-card-inner,
+        .flip-card:focus-within .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            border-radius: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+            backface-visibility: hidden;
+            box-shadow: 0 8px 20px #87CEEB50;
+        }
+        .flip-card-front {
+            background: linear-gradient(135deg, #B8F2E6, #87CEEB);
+            border: 2px solid white;
+        }
+
+        .flip-card-front h3 {
+            color: #267DA6;
+            font-size: 21px;
+        }
+
+        .flip-card-front p {
+            font-size: 14px;
+        }
+        .flip-card-back {
+            background: linear-gradient(135deg, #FFD6E7, #B8F2E6);
+            transform: rotateY(180deg);
+            border: 2px solid white;
+        }
+        .flip-card-back h3 {
+            color: #C23B70;
+        }
+        .flip-card-back a {
+            display: inline-block;
+            background-color: white;
+            color: #2584B9;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.4s;
+        }
+        .flip-card-back a:hover {
+            background-color: #87CEEB;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px #2584B950;
+        }
+        #contact {
+            background: linear-gradient(135deg, #E1FFF4, #E5F3FF, #FFF0F6);
+        }
+        .contact-button {
+            display: inline-block;
+            background-color: #87CEEB;
+            color: #34495E;
+            padding: 12px 25px;
+            margin-top: 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.4s;
+        }
+        .contact-button:hover {
+            background-color: #FFD6E7;
+            transform: scale(1.08);
+        }
+        footer {
+            background: linear-gradient(90deg, #B8F2E6, #87CEEB);
+            text-align: center;
+            padding: 25px;
+            border-top: 4px solid #FFD6E7;
+            front-size: 26px;
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 3px #87CEEB;
+            }
+
+            to {
+                text-shadow: 0 0 18px #FFD6E7;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        @media (max-width: 600px) {
+            main {
+                width: 94%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                padding: 8px 12px;
+                margin: 4px;
+            }
+
+            section {
+                padding: 28px 15px;
+            }
+
+            section h2 {
+                font-size: 25px;
+            }
+
+            #home h2 {
+                font-size: 28px;
+            }
+
+            #skills article {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .flip-card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🌸 Pooja's Portfolio 🌸</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="home">
+            <h2>Hello, I'm Pooja 👋</h2>
+            <h3>Welcome to my creative world! 💚</h3>
+            <h3>Aspiring Web Developer 💻</h3>
+
+            <p>
+                I love learning new technologies and creating
+                beautiful websites. I enjoy coding, designing,
+                and building creative projects.
+            </p>
+            <a href="#projects" class="home-button">
+                Explore My Projects 
+            </a>    <a href="#contact" class="home-button">Contact Me</a>
+        </section>
+
+        <section id="about">
+            <h2>About Me 🌷</h2>
+
+            <article>
+                <p>
+                    I am a student passionate about technology,
+                    coding, and web development. I enjoy learning
+                    new skills and creating attractive websites.
+                    My goal is to become a skilled developer.
+                </p>
+
+            </article>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills ✨</h2>
+
+            <article>
+                <h3>🌐 HTML</h3>
+                <p>Creating webpage structures.</p>
+            </article>
+
+            <article>
+                <h3>🎨 CSS</h3>
+                <p>Designing attractive webpages.</p>
+            </article>
+
+            <article>
+                <h3>☕ Java</h3>
+                <p>Learning programming logic.</p>
+            </article>
+
+            <article>
+                <h3>🐍 Python</h3>
+                <p>Practising coding and problem-solving.</p>
+            </article>
+
+            <article>
+                <h3>🐧 Linux</h3>
+                <p>Learning terminal commands.</p>
+            </article>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects 🚀</h2>
+
+            <div class="project-container">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <h3>PROFILE</h3>
+                            <p>MY FIRST PROJECT</p>
+                            <p>Hover to explore ✨</p>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <h3>Profile</h3>
+                            <p>Created using HTML and CSS.</p>
+                            <a href="../profile.html" class="btn" target="_main">My Profile
+                                VIEW ↗
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <h3>REGISTRATION FORM</h3>
+                            <p>Simple Signup Page</p>
+                            <p>Hover to explore ✨</p>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <h3>Signup Form</h3>
+                            <p>A simple registration form.</p>
+                            <a href="../signup.html" class="btn" target="_main">Signup
+                                VIEW ↗
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <h3>CLOTH ICON</h3>
+                            <p>Simple Clothing Icon</p>
+                            <p>Hover to explore ✨</p>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <h3>Clothing Icon</h3>
+                            <p>A simple icon representing clothing.</p>
+                            <a href="../cloth_icon.html" target="_main" class="btn">Clothing
+                                VIEW ↗
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <pre>
+            <div class="contact-button">
+            Made by Pooja |© 2026  <a href="https://github.com/pooja121507-del?tab=repositories" target="_main"><img src="github.png" alt="GitHub" class="icon"></a> <a href="https://www.linkedin.com/in/pooja-kumari-374384434/" target="_main"><img src="linkedin.png" alt="LinkedIn" class="icon"></a> Email: pooja121507@gmail.com  Phone: +91 8106066684
+            </div>
+        </pre>
+    </footer>
+</body>
+</html>
