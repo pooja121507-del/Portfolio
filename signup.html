@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #eaf8ff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+    </style>
+<body>
+    <form>
+    <h1>Registration form</h1>
+        <label for="email">Email:</label>
+        <input type="email" name="email"  required="Please fill this" placeholder="Enter your email">
+    <br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required="Please fill this" placeholder="Enter your password">
+        <br><br>
+        <label for="Gender">Gender:</label>
+        <input type="radio" name="Gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" name="Gender" value="female">
+        <label for="female">Female</label>
+        <br><br>
+        <label for="city">City:</label>
+        <input type="text" name="city" required="Please fill this" placeholder="Enter your city">
+        <br><br>
+        <label for="batch">Batch:</label>
+        <select name="batch" required="Please fill this">
+            <option value="Batch 1">2026</option>
+            <option value="Batch 2">2027</option>
+            <option value="Batch 3">2028</option>
+            <option value="Batch 4">2029</option>
+        </select>
+        <br><br>
+        <input type="checkbox" name="terms" required="Please fill this">
+        <label for="terms">I agree to the terms and conditions</label>
+        <br><br>
+        <button type="submit">Sign in</button>
+        <br><br>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
